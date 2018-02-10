@@ -1,11 +1,10 @@
 /*
 start : 2018/02/10 10:29
 ps : Good code can say any things.
-
 */
 #include<iostream>
 using namespace std;
-int Global_time,n = 5;
+int Global_time=0,n = 5;
 struct passenger
 {
     int request_time;
@@ -16,15 +15,24 @@ struct passenger
 };
 struct queue
 {
-    int use=0;
-    int leave = -1;
+    int use;
+    int leave;
 };
 struct passenger passengerL[6];
 struct queue passengerQ[6];
 //Above delimit the global variable
+void pre(){
+    for (int i = 0; i < 6;i++){
+        passengerQ[i].use = 0;
+        passengerQ[i].leave = -1;
+    }
+}
+//prepare
 void in(){
     for (int i = 1; i <= n;i++){
-        cin >> passengerL[i].request_time >> passengerL[i].request_place_from >> passengerL[i].request_place_to;
+        cin >> passengerL[i].request_time;
+        cin >> passengerL[i].request_place_from;
+        cin >> passengerL[i].request_place_to;
     }
 }
 //get the in data
@@ -130,17 +138,19 @@ void run(){
 //run for answer
 void out(){
     int temp=0;//count the number of wait time
-    for (int i = 1; i <= n;i++){
-        cout << passengerL[i].request_arrive_time << "时，停靠在";
-        cout << passengerL[i].request_place_to << "楼"<<endl;
-        temp += passengerL[i].request_arrive_time - passengerL[i].request_time;
+    for (int j = 1; j <= 5;j++){
+        //cout << passengerL[i].request_arrive_time << "时，停靠在";
+        cout << passengerL[j].request_place_to << "楼"<<endl;
+        //temp = temp + passengerL[j].request_arrive_time - passengerL[j].request_time;
+        cout << j << endl;
     }
     cout << temp << endl;
 }
 //output the out data
 int main(){
-    void in();
-    void run();
-    void out();
+    pre();
+    in();
+    run();
+    out();
     return 0;
 }
