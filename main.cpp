@@ -133,6 +133,7 @@ void out(){
     for (int i = 1; i <= n;i++){
         cout << passengerL[i].request_arrive_time << "时，停靠在";
         cout << passengerL[i].request_place_to << "楼"<<endl;
+        temp += passengerL[i].request_arrive_time - passengerL[i].request_time;
     }
     cout << temp << endl;
 }
