@@ -139,10 +139,9 @@ void run(){
 void out(){
     int temp=0;//count the number of wait time
     for (int j = 1; j <= 5;j++){
-        //cout << passengerL[i].request_arrive_time << "时，停靠在";
+        cout << passengerL[j].request_arrive_time << "时，停靠在";
         cout << passengerL[j].request_place_to << "楼"<<endl;
-        //temp = temp + passengerL[j].request_arrive_time - passengerL[j].request_time;
-        cout << j << endl;
+        temp = temp + passengerL[j].request_arrive_time - passengerL[j].request_time;
     }
     cout << temp << endl;
 }
