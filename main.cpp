@@ -140,6 +140,8 @@ void out(){
     int temp=0;//count the number of wait time
     for (int j = 1; j <= 5;j++){
         cout << passengerL[j].request_arrive_time << "Ê±£¬Í£¿¿ÔÚ";
+        if(passengerL[j].request_place_to==0)
+            passengerL[j].request_place_to = 10;
         cout << passengerL[j].request_place_to << "Â¥"<<endl;
         temp = temp + passengerL[j].request_arrive_time - passengerL[j].request_time;
     }
