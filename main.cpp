@@ -3,6 +3,7 @@ start : 2018/02/10 10:29
 ps : Good code can say any things.
 */
 #include<iostream>
+#include<cstdio>
 using namespace std;
 int Global_time=0,n = 5;
 struct passenger
@@ -149,6 +150,8 @@ void out(){
 }
 //output the out data
 int main(){
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
     pre();
     in();
     run();
