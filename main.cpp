@@ -59,6 +59,14 @@ struct passenger{
     int use,leave;
 };
 struct passenger passengerL[6];
+void check_data(){
+    for (int i = 1; i <= 5;i++){
+        if(passengerL[i].req_time<0||passengerL[i].req_place_fr<0||passengerL[i].req_place_to<0){
+            cout << "输入不合法" << endl;
+            exit(0);
+        }
+    }
+}
 void in(){
     for (int i = 0; i < 6;i++){
         passengerL[i].use = 0;passengerL[i].leave = 0;
@@ -70,6 +78,7 @@ void in(){
         if(passengerL[i].req_place_to==0)
             passengerL[i].req_place_to = 10;
     }
+        check_data();
 }
 //检查请求是否完成
 int check_queue_use(){
