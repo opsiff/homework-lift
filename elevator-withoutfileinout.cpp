@@ -108,6 +108,8 @@ void in(){
         cin >> passengerL[i].req_place_to;
         if(passengerL[i].req_place_to==0)
             passengerL[i].req_place_to = 10;
+        if(passengerL[i].req_place_fr==0)
+            passengerL[i].req_place_fr = 10;
     }
         check_data();
 }
